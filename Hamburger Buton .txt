@@ -1,0 +1,16 @@
+ <Image Width="33" Source="Image/Icon/open-menu.png" Style="{DynamicResource hamburgerbutonlar}" x:Name="btn_HamburgerMenu" 
+                           HorizontalAlignment="Left" MouseDown="btn_HamburgerMenu_MouseDown" Margin="12,2,0,3"/>
+
+---------------------------------
+        <!--Hamburger Butonlar-->
+        <Style x:Key="hamburgerbutonlar" TargetType="Image">
+            <Setter Property="Opacity" Value="0.7"/>
+            <Setter Property="Width" Value="16"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Opacity" Value="1"/>
+                    <Setter Property="Width" Value="20"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
