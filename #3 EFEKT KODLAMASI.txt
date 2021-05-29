@@ -1,0 +1,57 @@
+<DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image x:Name="lbl_logo">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Source" Value="Image/Icon/document_beyaz.png"/>
+                                    <Setter Property="Height" Value="auto"/>
+                                    <Setter Property="Width" Value="150"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Image/Icon/document_beyaz.png"/>
+                                            <Setter Property="Width" Value="105"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </DockPanel>
+
+
+-------------------------------------------------------------------------------------------------------
+
+            <Ellipse Height="111" Width="108" Canvas.Left="121" Canvas.Top="-2" Panel.ZIndex="2" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" 
+                     Style="{DynamicResource don_dunya}">
+                <Ellipse.RenderTransform>
+                    <RotateTransform/>
+                </Ellipse.RenderTransform>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF134187" Offset="0.963"/>
+                        <GradientStop Color="White" Offset="0.983"/>
+                        <GradientStop Color="#FFF1F2F3" Offset="0.937"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF134187" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.713"/>
+                        <GradientStop Color="White" Offset="0.35"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+------
+ <!--Dönme Efekti-->
+        <Style x:Key="don_dunya" TargetType="Ellipse">
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Ellipse.RenderTransform).(RotateTransform.Angle)" To="360" Duration="0:0:10" RepeatBehavior="Forever"/>   
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>    
+            </Style.Triggers>
+        </Style>
