@@ -1,0 +1,33 @@
+<Button Content="| |" Style="{StaticResource minibutonlar}" FontSize="12" x:Name="btn_TamEkran" Click="btn_TamEkran_Click" 
+                                ToolTip="Büyüt"/>
+
+---------------------------------------
+
+ <Style x:Key="minibutonlar" TargetType="Button">
+            <Setter Property="Foreground" Value="#FF787878"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0,0,0,0"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0,0,0,0"
+                                BorderBrush=" #FF8F8F8F"
+                                Background="White">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="White"/>
+                                <Setter TargetName="border" Property="Background" Value="#FF0F2E80"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
