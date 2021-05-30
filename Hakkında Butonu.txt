@@ -1,0 +1,38 @@
+ <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_hakkinda" Click="menubuton_hakkinda_Click">
+                        <DockPanel Width="220"  Margin="15,0,0,0">
+                            <Image Source="Image/Icon/next.png" Width="32"/>
+                            <Label Content="Hakkında" Foreground="White" x:Name="lbl_menu6"/>
+                        </DockPanel>
+                    </ToggleButton>
+------------------------------------------------------
+<Style x:Key="menubutonlar" TargetType="ToggleButton">
+            <Setter Property="Foreground" Value="#FF787878"/>
+            <Setter Property="Margin" Value="0,0,0,1"/> 
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border Name="border"
+                                BorderThickness="5,0,0,0"
+                                BorderBrush="{x:Null}"
+                                Background="{x:Null}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#2B5493"/>
+                                <Setter TargetName="border" Property="Background" Value="#2B5493"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="5,0,0,0"/>
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="white"/>
+                                <Setter TargetName="border" Property="Background" Value="#2B5493"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="5,0,0,0"/>
+                            </Trigger>
+                            
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
