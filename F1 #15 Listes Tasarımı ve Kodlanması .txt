@@ -1,0 +1,206 @@
+ <Grid.RowDefinitions>
+           
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+       
+        </Grid.RowDefinitions>
+       
+        <Border Grid.Row="0" Margin="3,3,3,0">
+            <DataGrid x:Name="dtg_KitapListesi" Background="{x:Null}" ItemsSource="{Binding}" BorderBrush="{x:Null}" Foreground="#FF042263" IsReadOnly="True"
+                      RowHeight="30" CanUserAddRows="False" CanUserSortColumns="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
+                      HorizontalGridLinesBrush="#FF9B9B9B" VerticalGridLinesBrush="#FFBBBBBB" HeadersVisibility="Column" AutoGenerateColumns="False"
+                       Style="{DynamicResource DataGridStyle1}">
+
+                <DataGrid.Resources>
+
+                    <Style TargetType="{x:Type DataGridRow}">
+
+                        <EventSetter Event="Control.MouseDoubleClick" Handler="dtg_KitapListesi_MouseDoubleClick"/>
+
+                    </Style> 
+                    
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Binding="{Binding Path=Barkod}" IsReadOnly="True" Header="BARKOD" MinWidth="50">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="#2e61af"/>
+                                <Setter Property="BorderThickness" Value="5,0,0,0"/>
+                                <Setter Property="BorderBrush" Value="#ff134187"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="#ff131487"/>
+                                        <Setter Property="BorderThickness" Value="5,0,0,0"/>
+                                        <Setter Property="BorderBrush" Value="white"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>                        
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=ID}" IsReadOnly="True" Header="" MaxWidth="2">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                        
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=KitapAdi}" IsReadOnly="True" Header="KITAP ADI" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=KitapTuru}" IsReadOnly="True" Header="KITAP TURU" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=AdiSoyadi}" IsReadOnly="True" Header="KITAP YAZARI" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=TeminTuru}" IsReadOnly="True" Header="TEMİN TÜRÜ" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=TeminTarihi}" IsReadOnly="True" Header="TEMİN TARİHİ" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=YayinEviAdi}" IsReadOnly="True" Header="YAYIN EVİ" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=BaskiTarihi}" IsReadOnly="True" Header="BASKI TARİHİ" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=BaskiYeri}" IsReadOnly="True" Header="BASKI YERİ" MaxWidth="100" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+                                        
+                </DataGrid.Columns>
+                    
+                
+            </DataGrid>
+            
+        </Border>
+
+-------------------------------------------------------------------------------------------------------------------
+  public partial class Kitap_Listesi : UserControl
+    {
+        public Kitap_Listesi()
+        {
+            InitializeComponent();
+        }
+
+        MainWindow gk = (MainWindow)Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+        private void btn_kitapEkle_Click(object sender, RoutedEventArgs e)
+        {
+
+            winKitapEkle ekle = new winKitapEkle();
+            ekle.Owner = gk;
+            gk.Opacity = 0.3;
+
+            ekle.ShowDialog();
+
+
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            DBislemci.GridDoldur(dtg_KitapListesi);
+        }
+
+        string barkodNo;
+        string kitapTuru, KitapYazari;
+        private void dtg_KitapListesi_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            barkodNo = ((TextBlock)dtg_KitapListesi.Columns[0].GetCellContent(dtg_KitapListesi.SelectedItem)).Text;
+            kitapTuru = ((TextBlock)dtg_KitapListesi.Columns[2].GetCellContent(dtg_KitapListesi.SelectedItem)).Text;
+            KitapYazari = ((TextBlock)dtg_KitapListesi.Columns[3].GetCellContent(dtg_KitapListesi.SelectedItem)).Text;
+
+            MessageBox.Show(barkodNo+" - "+kitapTuru+" - "+KitapYazari);
+        }
+    }
+}
