@@ -1,0 +1,134 @@
+<Window.Triggers>
+        
+        <EventTrigger RoutedEvent="Window.Loaded">
+
+            <BeginStoryboard>
+
+                <Storyboard>
+
+                    <DoubleAnimation Duration="00:00:0.7" Storyboard.TargetProperty="Opacity" From="0.0" To=" 1.0"/>
+                    
+                </Storyboard>
+                
+            </BeginStoryboard>
+        
+        </EventTrigger>        
+    </Window.Triggers>
+    
+    <Grid>
+
+        <Canvas>
+
+            <Button Content="X"  Style="{DynamicResource minibutonlar}" x:Name="btn_BilgiEkrani_Kapat" FontSize="12" Click="btn_BilgiEkrani_Kapat_Click" ToolTip="Kapat" Canvas.Left="394" Canvas.Top="76" Height="29" Panel.ZIndex="3"/>
+
+            <Image Source="Image/Icon/tick.png" x:Name="img_Olumlu" Canvas.Left="44" Canvas.Top="69" Height="47" Width="47" Panel.ZIndex="3"/>
+
+            <Image Source="Image/Icon/risk.png" x:Name="img_Olumsuz" Canvas.Left="44" Canvas.Top="65" Height="47" Width="47" Panel.ZIndex="3"/>
+
+            <Label Content="BİLGİLENDİRME" Canvas.Left="106" Canvas.Top="78" Panel.ZIndex="3" FontWeight="Bold" Foreground="White"/>
+
+            <Label Content="BİLGİLENDİRME" Canvas.Left="101" Canvas.Top="120" Height="111" Width="295" Panel.ZIndex="3" FontWeight="Bold" Foreground="#FF134187" Background="{x:Null}" VerticalContentAlignment="Center"
+                   x:Name="BilgiEkrani_Content"/>
+
+            <Ellipse Height="68" Width="67" Canvas.Left="34" Canvas.Top="58" Panel.ZIndex="2" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" 
+                     Style="{DynamicResource don_dunya}" x:Name="Olumsuz_BilgiEkrani">
+                <Ellipse.RenderTransform>
+                    <RotateTransform/>
+                </Ellipse.RenderTransform>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF134187" Offset="0.963"/>
+                        <GradientStop Color="White" Offset="0.983"/>
+                        <GradientStop Color="#FFF1F2F3" Offset="0.937"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red" Offset="0.277"/>
+                        <GradientStop Color="white" Offset="0.277"/>
+                        <GradientStop Color="Red" Offset="0.704"/>
+                        <GradientStop Color="White" Offset="0.7"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+
+            <Border Background="#FF134187" Height="29" Width="357" Canvas.Left="72" Canvas.Top="76" Panel.ZIndex="1" x:Name="BilgiEkranHeader" >
+
+            </Border>
+
+            <Border Background="White" Height="170" Width="357" Canvas.Left="72" Canvas.Top="76">
+
+            </Border>
+
+            <Ellipse Height="68" Width="67" Canvas.Left="34" Canvas.Top="58" Panel.ZIndex="2" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" 
+                     Style="{DynamicResource don_dunya}" x:Name="Olumlu_BilgiEkrani">
+                <Ellipse.RenderTransform>
+                    <RotateTransform/>
+                </Ellipse.RenderTransform>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF134187" Offset="0.963"/>
+                        <GradientStop Color="White" Offset="0.983"/>
+                        <GradientStop Color="#FFF1F2F3" Offset="0.937"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF134187" Offset="0.277"/>
+                        <GradientStop Color="white" Offset="0.277"/>
+                        <GradientStop Color="#FF134187" Offset="0.704"/>
+                        <GradientStop Color="White" Offset="0.7"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+
+        </Canvas>
+
+    </Grid>
+</Window>
+
+-------------------------------------------------------------------------------------------------------------
+
+ <Style x:Key="don_dunya" TargetType="Ellipse">
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Ellipse.RenderTransform).(RotateTransform.Angle)" To="360" Duration="0:0:10" RepeatBehavior="Forever"/>   
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>    
+            </Style.Triggers>
+        </Style>
+
+------------------------------------------------------------------------------------------------
+
+ <Style x:Key="minibutonlar" TargetType="Button">
+            <Setter Property="Foreground" Value="#FF787878"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0,0,0,0"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0,0,0,0"
+                                BorderBrush=" #FF8F8F8F"
+                                Background="White">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="White"/>
+                                <Setter TargetName="border" Property="Background" Value="#FF0F2E80"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
