@@ -1,0 +1,119 @@
+ <Border Grid.Row="1">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Background" Value="#134187"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#3F5F96CF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+---------------------------------------------------------------------------------------------------------------------------
+ <Border Background="#134187" Grid.Column="0" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Source="Image/Icon/adam.png" Height="24" Width="24"/>
+                        <Label Content="KUTUPHANE PROGRAMI" Foreground="White" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="lbl_LogoYazi"/>
+                    </DockPanel>
+                </Border>
+----------------------------------------------------------------------------------------------------------------------------
+  <Border Background="#134187" Grid.Column="1" Grid.Row="0" x:Name="brd_sagust" MouseDown="brd_sagust_MouseDown">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="1" Background="#134187">
+                    <Border.Effect>
+                        <DropShadowEffect Opacity="0.35" BlurRadius="10" Direction="220"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="350"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0">
+                            <StackPanel VerticalAlignment="Center" Margin="30,0,0,0">
+                                <DockPanel>
+                                    <Label Content="Toplam Kitap Sayısı : " Foreground="White" FontSize="18"/>
+                                    <Label Content="10" Foreground="#FF9AE243" FontSize="18"/>
+                                </DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <DockPanel>
+                                        <Label Content="Emanet Sayısı : " Foreground="White" FontSize="14"/>
+                                        <Label Content="5" Foreground="#FF9AE243" FontSize="18"/>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <Label Content="Süresi Dolan : " Foreground="White" FontSize="14"/>
+                                        <Label Content="3" Foreground="#FFDE3131" FontSize="18"/>
+                                    </DockPanel>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.ColumnSpan="2" Margin="315,10,10,-10">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Image/pencere/altpencere2.png"/>
+                            </Border.Background>
+                            <Border Width="220" Height="120" CornerRadius="10,10,10,10" Background="#4C08316E">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Image/Icon/person.png" Width="100"/>
+                                    <StackPanel VerticalAlignment="Center" Margin="3,0,0,0">
+                                        <Label Content="YASUİD" Background="#FF84A7F1" Foreground="White" FontWeight="Bold"/>
+                                        <Label Content="Yönetici" Background="#FF224059" Foreground="White" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+-------------------------------------------------------------------------------------------------------------------------------------
+ <Border Background="#134187" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+<Image Source="Image/pencere/altpencere2.png" Height="123" Panel.ZIndex="-99" Margin="0,3,0,0" x:Name="menu_altpencere_resim">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0.455"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0.492"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Canvas>
+                        <Border Canvas.Left="72" Canvas.Top="-57" CornerRadius="10,10,10,10" Cursor="Hand" x:Name="menu_altlabel">
+                            <Label Content="10.0.0.1" Foreground="white" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="#99053D76"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#FF053D76"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                        </Border>
+                    </Canvas>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ <Border Grid.Column="1" Grid.Row="1" Background="White" Grid.RowSpan="2">
+            <Grid x:Name="Content_icerik">
+
+            </Grid>
+        </Border>
