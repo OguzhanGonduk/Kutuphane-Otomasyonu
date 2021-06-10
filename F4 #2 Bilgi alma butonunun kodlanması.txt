@@ -1,0 +1,28 @@
+<Button Height="33" Width="35" Canvas.Left="707" Canvas.Top="26" Panel.ZIndex="5" Style="{DynamicResource daireButonBilgi}" x:Name="btn_KitapEkeBİlgi" 
+                    Click="btn_KitapEkeBilgi_Click" ToolTip="Bilgi Al"/>
+
+
+--------------------------------------------------------------------------------
+
+ <Style x:Key="daireButonBilgi" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse x:Name="ButonDaire" Width="Auto" Height="Auto" Stroke="White"/>
+                            <Image Source="Image/Icon/info.png" Width="33" Height="auto" ToolTip="Bilgi Al"/>
+                            <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButonDaire" Property="Width" Value="Auto"/>
+                                <Setter TargetName="ButonDaire" Property="Height" Value="Auto"/>
+                                <Setter TargetName="ButonDaire" Property="Fill" Value="#FF2965C1"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
