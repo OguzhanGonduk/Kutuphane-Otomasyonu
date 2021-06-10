@@ -1,0 +1,26 @@
+            <Button Height="33" Width="35" Canvas.Left="747" Canvas.Top="26" Panel.ZIndex="5" Style="{DynamicResource daireButonIptal}" x:Name="btn_KitapEleKapat"
+                    Click="btn_KitapEleKapat_Click" ToolTip="Kapat"/>
+
+-----------------------------------------------------------------------------
+
+   <Style x:Key="daireButonIptal" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse x:Name="ButonDaire" Width="Auto" Height="Auto" Stroke="White"/>
+                            <Image Source="Image/Icon/exit.png" Width="33" Height="auto" ToolTip="Kapat!"/>
+                            <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButonDaire" Property="Width" Value="Auto"/>
+                                <Setter TargetName="ButonDaire" Property="Height" Value="Auto"/>
+                                <Setter TargetName="ButonDaire" Property="Fill" Value="#FF530707"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
